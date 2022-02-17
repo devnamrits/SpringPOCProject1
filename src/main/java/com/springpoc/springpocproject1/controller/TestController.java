@@ -3,12 +3,16 @@ package com.springpoc.springpocproject1.controller;
 import com.springpoc.springpocproject1.entities.Course;
 import com.springpoc.springpocproject1.services.CourseService;
 import com.springpoc.springpocproject1.services.DummyCourseServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
 public class TestController {
+
+    @Autowired
+    private CourseService courseService;
 
     @GetMapping("/home")
     public String hello(){
@@ -19,7 +23,6 @@ public class TestController {
 
     @GetMapping("/courses")
     public List<Course> getCourses(){
-        CourseService courseService = new DummyCourseServiceImpl();
-        return courseService.getCourses();
+        return this.courseService.getCourses();
     }
 }
