@@ -29,7 +29,7 @@ public class TestController {
 
     //get singe course
     @GetMapping("/courses/{courseId}")
-    public Course getCourse(@PathVariable long courseId){
-        return this.courseService.getCourse(courseId);
+    public Course getCourse(@PathVariable String courseId){
+        return this.courseService.getCourse(Long.parseLong(courseId));
     }
 }
