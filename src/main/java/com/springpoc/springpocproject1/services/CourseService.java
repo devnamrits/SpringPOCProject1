@@ -6,4 +6,6 @@ import com.springpoc.springpocproject1.entities.Course;
 
 public interface CourseService {
     List<Course> getCourses();
+
+    Course getCourse(long courseId);
 }

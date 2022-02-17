@@ -8,8 +8,26 @@ import java.util.List;
 
 @Service
 public class DummyCourseServiceImpl implements CourseService {
+    private List<Course> list;
+
+    public DummyCourseServiceImpl() {
+        list = new ArrayList<>();
+        list.add(new Course(1, "Hindi", "Hindi Language"));
+        list.add(new Course(2, "Math", "Mathematics Language"));
+    }
+
     @Override
     public List<Course> getCourses() {
-        return new ArrayList<>(List.of(new Course(1, "Hindi", "Hindi Language"), new Course(2, "Maths", "Mathematics")));
+        return list;
+    }
+
+    @Override
+    public Course getCourse(long courseId) {
+        for(Course course:list){
+            if(course.getId()==courseId){
+                return course;
+            }
+        }
+        return null;
     }
 }
