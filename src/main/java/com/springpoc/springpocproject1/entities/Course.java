@@ -1,6 +1,12 @@
 package com.springpoc.springpocproject1.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Course {
+
+    @Id
     private long id;
     private String title;
     private String description;
@@ -9,6 +15,10 @@ public class Course {
         this.id = id;
         this.title = title;
         this.description = description;
+    }
+
+    public Course() {
+        super();
     }
 
     public long getId() {
