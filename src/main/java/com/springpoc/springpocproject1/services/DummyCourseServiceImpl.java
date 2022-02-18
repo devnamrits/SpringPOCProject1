@@ -36,4 +36,14 @@ public class DummyCourseServiceImpl implements CourseService {
         list.add(course);
         return course;
     }
+
+    @Override
+    public Course putCourse(Course course){
+        for(int i=0;i<list.size();i++){
+            if(list.get(i).getId()==course.getId()) {
+                list.set(i, course);
+            }
+        }
+        return course;
+    }
 }

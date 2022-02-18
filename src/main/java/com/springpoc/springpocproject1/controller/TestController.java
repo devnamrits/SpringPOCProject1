@@ -37,4 +37,10 @@ public class TestController {
     public Course postCourse(@RequestBody Course course){
         return this.courseService.postCourse(course);
     }
+
+    @RequestMapping(value = "/courses", method = RequestMethod.PUT)
+    public Course putCourse(@RequestBody Course course){
+        return  this.courseService.putCourse(course);
+    }
+
 }
