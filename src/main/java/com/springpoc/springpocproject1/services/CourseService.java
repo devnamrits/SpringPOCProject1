@@ -12,4 +12,6 @@ public interface CourseService {
     Course postCourse(Course course);
 
     Course putCourse(Course course);
+
+    void deleteCourse(long courseId);
 }
