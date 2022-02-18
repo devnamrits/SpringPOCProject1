@@ -4,9 +4,8 @@ import com.springpoc.springpocproject1.entities.Course;
 import com.springpoc.springpocproject1.services.CourseService;
 import com.springpoc.springpocproject1.services.DummyCourseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -27,9 +26,15 @@ public class TestController {
         return this.courseService.getCourses();
     }
 
-    //get singe course
+    // get single course
     @GetMapping("/courses/{courseId}")
     public Course getCourse(@PathVariable String courseId){
         return this.courseService.getCourse(Long.parseLong(courseId));
+    }
+
+    // add Course
+    @PostMapping("/courses")
+    public Course postCourse(@RequestBody Course course){
+        return this.courseService.postCourse(course);
     }
 }

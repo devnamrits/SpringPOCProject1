@@ -30,4 +30,10 @@ public class DummyCourseServiceImpl implements CourseService {
         }
         return null;
     }
+
+    @Override
+    public Course postCourse(Course course) {
+        list.add(course);
+        return course;
+    }
 }

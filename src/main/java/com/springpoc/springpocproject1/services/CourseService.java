@@ -8,4 +8,6 @@ public interface CourseService {
     List<Course> getCourses();
 
     Course getCourse(long courseId);
+
+    Course postCourse(Course course);
 }
