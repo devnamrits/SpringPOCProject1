@@ -24,8 +24,8 @@ public class DummyCourseServiceImpl implements CourseService {
 
     @Override
     public Course getCourse(long courseId) {
-        for(Course course:list){
-            if(course.getId()==courseId){
+        for (Course course : list) {
+            if (course.getId() == courseId) {
                 return course;
             }
         }
@@ -39,9 +39,9 @@ public class DummyCourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course putCourse(Course course){
-        for(int i=0;i<list.size();i++){
-            if(list.get(i).getId()==course.getId()) {
+    public Course putCourse(Course course) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId() == course.getId()) {
                 list.set(i, course);
             }
         }
@@ -50,6 +50,6 @@ public class DummyCourseServiceImpl implements CourseService {
 
     @Override
     public void deleteCourse(long courseId) {
-        list.stream().filter(e->e.getId()!=courseId).collect(Collectors.toList());
+        list.stream().filter(e -> e.getId() != courseId).collect(Collectors.toList());
     }
 }

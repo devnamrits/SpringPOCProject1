@@ -18,41 +18,40 @@ public class TestController {
     private CourseService courseService;
 
     @GetMapping("/home")
-    public String hello(){
+    public String hello() {
         return "Hello Spring";
     }
 
     //get the Courses
 
     @GetMapping("/courses")
-    public List<Course> getCourses(){
+    public List<Course> getCourses() {
         return this.courseService.getCourses();
     }
 
     // get single course
     @GetMapping("/courses/{courseId}")
-    public Course getCourse(@PathVariable String courseId){
+    public Course getCourse(@PathVariable String courseId) {
         return this.courseService.getCourse(Long.parseLong(courseId));
     }
 
     // add Course
     @PostMapping("/courses")
-    public Course postCourse(@RequestBody Course course){
+    public Course postCourse(@RequestBody Course course) {
         return this.courseService.postCourse(course);
     }
 
     @RequestMapping(value = "/courses", method = RequestMethod.PUT)
-    public Course putCourse(@RequestBody Course course){
-        return  this.courseService.putCourse(course);
+    public Course putCourse(@RequestBody Course course) {
+        return this.courseService.putCourse(course);
     }
 
     @DeleteMapping("/courses/{courseId}")
-    public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String courseId){
-        try{
+    public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String courseId) {
+        try {
             this.courseService.deleteCourse(Long.parseLong(courseId));
             return new ResponseEntity<>(HttpStatus.OK);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
