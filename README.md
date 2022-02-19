@@ -25,3 +25,6 @@ MySQL 8.0.28
 
 - GET: Returns details of course of given id.
 - DELETE: Deletes details of course of given id.
+
+### Authored By -
+    devnamrits (Hritik Kumar)
