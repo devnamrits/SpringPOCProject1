@@ -1,19 +1,19 @@
-#SpringPOCProject1
+# SpringPOCProject1
 
-##About
+## About
 
 This is a POC project on how to use Spring Boot Framework in java to develop robust backend application. 
 Here I have tried to develop REST APIs and a basic CRUD application using JAVA Spring. In this project I'm
 creating courses and exposing APIs to add, delete courses from DB as well.
 
-##Technologies Used
+## Technologies Used
 OpenJDK 11
 
 SpringBoot
 
 MySQL 8.0.28
 
-##Routes
+## Routes
 
 /courses
 
